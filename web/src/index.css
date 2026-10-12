@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B0D12;
+    color: #F1F4F8;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.editorial-card {
+  background: #131720;
+  border: 1px solid #293140;
+  border-radius: 8px;
+  transition: border-color 0.15s ease;
+}
+
+.editorial-card:hover {
+  border-color: #3b465b;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Status Badges */
+.badge-critical {
+  background: rgba(255, 115, 125, 0.12);
+  color: #FF737D;
+  border: 1px solid rgba(255, 115, 125, 0.25);
+}
+
+.badge-high {
+  background: rgba(243, 188, 102, 0.12);
+  color: #F3BC66;
+  border: 1px solid rgba(243, 188, 102, 0.25);
+}
+
+.badge-medium {
+  background: rgba(120, 169, 255, 0.12);
+  color: #78A9FF;
+  border: 1px solid rgba(120, 169, 255, 0.25);
+}
+
+.badge-low {
+  background: rgba(113, 227, 189, 0.12);
+  color: #71E3BD;
+  border: 1px solid rgba(113, 227, 189, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0D12;
+}
+::-webkit-scrollbar-thumb {
+  background: #293140;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a455a;
+}

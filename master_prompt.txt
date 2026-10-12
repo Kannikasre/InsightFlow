@@ -1,0 +1,857 @@
+<USER_REQUEST>
+# MASTER BUILD PROMPT — INSIGHTFLOW
+## Full-Stack AI Customer Feedback & Decision Intelligence Platform | Build Battle 2026
+
+Act as an award-winning product designer, senior full-stack engineer, AI engineer, data architect, and design systems specialist. Build a complete, functional, deployable website called **InsightFlow — Intelligent Customer Feedback & Decision Platform**.
+
+This is a full-stack web application, NOT a frontend-only project, static prototype, dashboard mockup, or landing page.
+
+I will attach the following files to this prompt:
+- `Problem_Statement.pdf` — the official hackathon requirements.
+- `Adaption Documents.pdf` — documentation for the required Adaption integration.
+- `BuildBattle_2026_Customer_Feedback_Dataset.csv` — the actual customer feedback dataset.
+
+Read and inspect these files before implementing the application. Treat the official problem statement and Adaption documentation as the primary sources of truth.
+
+Your goal is to create an impressive, original, technically functional product that can be demonstrated to hackathon judges.
+
+---
+
+# 1. PRODUCT VISION
+
+Businesses receive large volumes of customer feedback through reviews, surveys, and support messages. They struggle to identify recurring problems, understand customer sentiment, recognize emerging complaints, and decide what to fix first.
+
+InsightFlow solves this problem by converting raw customer feedback into meaningful, evidence-backed business decisions.
+
+The complete user journey should be:
+
+**Import feedback → Analyze data → Detect customer problems → Investigate evidence → Prioritize issues → Generate recommendations → Track fixes → Measure changes → Export reports.**
+
+The product should feel like an intelligent investigation workspace for business decisions, rather than an ordinary analytics dashboard.
+
+Its central differentiator is **evidence-first intelligence**: every major insight should connect to the feedback records and calculations that support it.
+
+# 2. REQUIRED TECHNOLOGY ARCHITECTURE
+
+Implement the following architecture:
+
+## Frontend — what users see
+
+- Angular 20
+- TypeScript
+- Tailwind CSS v3
+- Apache ECharts or another appropriate interactive charting library
+- Lucide icons
+- Responsive layouts and accessible interactions
+
+Responsibilities:
+- Render all application pages.
+- Handle navigation, forms, tables, filters, charts, and user interactions.
+- Communicate with the backend using REST APIs.
+- Display real analysis results, loading states, errors, and progress.
+- Keep data presentation consistent with backend results.
+
+## Backend — application logic
+
+- Python Flask
+- REST API architecture
+- SQLAlchemy
+- Database migrations
+- Secure authentication and authorization
+- Server-side CSV processing
+- AI and data-analysis services
+- Adaption integration
+- Recommendation generation
+- Issue tracking and report generation
+
+Responsibilities:
+- Validate and process requests.
+- Authenticate users and enforce permissions.
+- Import, validate, and store customer feedback.
+- Execute analysis workflows.
+- Coordinate supported AI and Adaption operations.
+- Calculate dashboard metrics and issue priorities.
+- Persist recommendations, issues, and analysis history.
+- Generate downloadable reports.
+
+## Database — persistent storage
+
+Use PostgreSQL.
+
+Store:
+- Users and workspace details
+- Feedback records
+- Imported dataset metadata
+- Import and analysis history
+- Sentiment and topic results
+- Issue groups and supporting evidence
+- Recommendations and priority scores
+- Tracked issues, assignments, and status history
+- Report metadata where needed
+
+Use proper relationships, constraints, indexes, timestamps, and migrations.
+
+## API communication
+
+The architecture must follow:
+
+Angular frontend ↔ Flask REST API ↔ PostgreSQL database.
+
+The backend must invoke the AI-processing pipeline and the documented Adaption integration when appropriate.
+
+The frontend must never connect directly to the database or expose private API credentials.
+
+Do not substitute local arrays or browser storage for backend functionality. The database is the source of truth for application records.
+
+If an existing repository already uses a different stack, inspect it first and explain any necessary architectural changes rather than rewriting functioning code without reason.
+
+# 3. ATTACHMENT-FIRST IMPLEMENTATION
+
+Before writing the main application code:
+
+1. Read the entire problem statement.
+2. Read the Adaption documentation and identify its actual supported capabilities.
+3. Inspect the real CSV headers, data types, records, missing values, and potential data-quality issues.
+4. Determine which fields can support sentiment analysis, category analysis, trend analysis, and recommendations.
+5. Create a concise architecture and implementation plan.
+6. Begin implementation and continue until the main workflow works end to end.
+
+Do not invent CSV column names, feedback records, Adaption APIs, SDK methods, credentials, or model capabilities.
+
+The application must accommodate the actual supplied dataset, not a hypothetical dataset.
+
+If credentials are missing, clearly document the configuration required. Do not claim a service has been connected or an analysis has run successfully unless that is true.
+
+---
+
+# 4. DESIGN DIRECTION — NO GENERIC AI-GENERATED UI
+
+This is one of the most important requirements.
+
+Do not generate a typical AI coding-agent interface with a generic sidebar, a heading saying “Welcome back,” four identical white metric cards, purple gradient backgrounds, and a standard grid of charts.
+
+Do not merely apply a new color palette to a generic dashboard template.
+
+Approach this project as a premium digital product design studio building a distinctive business intelligence application.
+
+## Use these design keywords as creative direction
+
+**Art direction**
+- Editorial data intelligence
+- Investigative analytics
+- Swiss grid composition
+- Asymmetric layouts
+- High-information-density interface
+- Precision typography
+- Restrained color theory
+- Strong visual hierarchy
+- Intentional negative space
+- Data-first storytelling
+- Modular information architecture
+- Custom-designed analytical surfaces
+- Contextual progressive disclosure
+- Evidence-led visual narratives
+- Executive-grade reporting
+
+**Interaction design**
+- Purposeful micro-interactions
+- Functional motion design
+- Interactive evidence trails
+- Context-aware drill-downs
+- Animated state transitions
+- Keyboard-accessible command palette
+- Progressive data disclosure
+- Responsive chart exploration
+- Persistent filters
+- Contextual detail panels
+- Meaningful hover states
+- Loading skeletons and live processing states
+
+**Visual craftsmanship**
+- Pixel-perfect alignment
+- Deliberate typographic rhythm
+- Fine-line separators
+- Custom chart compositions
+- Compact information strips
+- Distinctive section headers
+- Layered analytical surfaces
+- Subtle depth instead of excessive shadows
+- Consistent spacing tokens
+- Accessible contrast
+- Carefully designed empty states
+- Responsive composition
+
+Use these concepts intelligently. Do not turn every keyword into a decorative effect.
+
+## Visual identity
+
+Create a dark-first, premium analytical workspace with a restrained and purposeful visual system.
+
+Suggested palette:
+
+- Background: `#0B0D12`
+- Primary surface: `#131720`
+- Secondary surface: `#191F2B`
+- Borders: `#293140`
+- Primary text: `#F1F4F8`
+- Secondary text: `#9AA5B5`
+- Mint: `#71E3BD`
+- Amber: `#F3BC66`
+- Coral: `#FF737D`
+- Blue: `#78A9FF`
+
+Use mint for positive or improving states, amber for caution, coral for critical or worsening states, and blue for informational elements.
+
+Do not use every accent everywhere. Maintain a deliberate color hierarchy.
+
+Use a refined sans-serif font, precise typographic scaling, tabular numerals for metrics, and clear differences between headings, metadata, labels, and body text.
+
+## Custom composition requirements
+
+- Use a carefully designed navigation rail or sidebar.
+- Build a visually distinctive dashboard with a dominant analytical insight, supporting metrics, and an evidence area.
+- Vary the composition of charts, metric strips, tables, and issue summaries.
+- Use asymmetry when it improves hierarchy.
+- Make important insights visually prominent without turning everything into a card.
+- Use compact data tables and readable evidence lists.
+- Prefer fine borders and controlled surface contrast over excessive shadows.
+- Keep border radii consistent and restrained.
+- Use original analytical visualizations instead of decorative illustrations.
+- Make transitions subtle and functional.
+- Design every screen independently within one consistent design system.
+- Avoid excessive glassmorphism, random gradients, decorative blobs, emoji icons, and repeated card grids.
+- Do not sacrifice readability for visual novelty.
+
+The finished product should look intentionally designed, technically credible, and memorable during a live demonstration.
+
+---
+
+# 5. REQUIRED PAGES
+
+Implement all nine application areas below, with working navigation and connected functionality.
+
+## PAGE 1 — LANDING PAGE
+
+Purpose: Explain the product and encourage users to enter the application.
+
+Include:
+- Custom InsightFlow identity and navigation
+- A strong headline about turning customer feedback into better business decisions
+- A distinctive analytical visualization or interactive product preview
+- A concise explanation of the feedback-to-decision workflow
+- Feature sections for evidence-backed insights, issue prioritization, and tracking
+- A preview of an actual analysis result when demo data is available
+- Sign-up and sign-in links
+- A polished footer
+
+Design this like a premium product launch page, not a generic AI landing-page template.
+
+The marketing page must lead naturally into the working application.
+
+## PAGE 2 — REGISTER / LOGIN
+
+Implement:
+- Registration
+- Login
+- Logout
+- Password hashing
+- Protected routes and protected API endpoints
+- Input validation
+- Clear error messages
+- Secure session or token management
+- Appropriate authorization checks
+
+Use a clean, distinctive authentication layout that matches the product identity.
+
+Never store plaintext passwords. Do not treat frontend route guards as sufficient security.
+
+## PAGE 3 — MAIN DASHBOARD
+
+Purpose: Give a business user an immediate understanding of the current customer experience.
+
+Display metrics derived from actual stored data:
+- Total feedback entries
+- Positive, neutral, and negative feedback distribution
+- Most frequent complaints
+- Highest-priority issues
+- Recent changes in complaint volume
+- Sentiment trends over time
+- Category-level comparisons
+- Emerging issues where sufficient historical data exists
+- Recent analysis and issue activity
+
+Provide relevant filters based on the actual dataset:
+- Date range
+- Category
+- Sentiment
+- Source
+- Other available attributes
+
+Filters must update metrics, charts, and issue lists consistently.
+
+Use an editorial, asymmetric dashboard composition with a dominant insight area, a compact metric strip, and an interactive analytical canvas.
+
+Never hardcode fabricated statistics.
+
+## PAGE 4 — FEEDBACK EXPLORER
+
+Purpose: Let users inspect and manage individual customer feedback entries.
+
+Implement:
+- CSV import entry point
+- Feedback listing
+- Keyword search
+- Sentiment filters
+- Category filters
+- Date filters
+- Source filters when available
+- Sorting and pagination
+- Individual feedback detail view
+- Manual feedback submission
+- Appropriate editing and deletion
+- Analysis status
+- Related issue links
+- Useful empty, loading, and error states
+
+Preserve original customer text.
+
+Use an efficient, well-designed table or hybrid table-and-detail-panel layout. Make individual feedback records easy to investigate.
+
+All operations must use the backend and persist in the database.
+
+## PAGE 5 — IMPORT & ANALYSIS
+
+Purpose: Import the provided dataset and execute the analysis pipeline.
+
+Implement a complete CSV-import workflow:
+
+1. Select or drop a CSV file.
+2. Validate the file type and size.
+3. Inspect its headers and sample rows.
+4. Allow column mapping if necessary.
+5. Preview the import.
+6. Detect missing values, malformed rows, and potential duplicates.
+7. Confirm the import.
+8. Store valid feedback records.
+9. Start analysis.
+10. Display processing status, completion results, and errors.
+
+Support the supplied dataset and reasonable variations in CSV structure.
+
+Create an analysis summary showing:
+- Records imported
+- Records accepted or rejected
+- Analysis status
+- Sentiment results
+- Detected topics
+- Categorized complaints
+- Generated insights
+- Failed steps requiring attention
+
+The processing interface should feel like an intelligent data workbench, not a plain file-upload form.
+
+## PAGE 6 — AI INSIGHTS
+
+Purpose: Explore what customers are saying and why it matters.
+
+Include:
+- Sentiment distribution
+- Frequently reported topics
+- Common complaints
+- Related-feedback clusters
+- Changes in feedback patterns
+- Evidence-backed conclusions
+- Links to original feedback
+- Relevant time periods
+- Counts of supporting records
+- Analysis confidence or limitations when available
+
+### Customer Pain Radar
+
+Highlight issues with meaningful evidence of high frequency, severity, or recent growth.
+
+For each issue, display:
+- Issue title
+- Category
+- Feedback count
+- Negative-sentiment proportion
+- Trend or change over a clearly defined period
+- Priority
+- Representative feedback
+- Link to the full evidence
+
+Do not label an issue as emerging solely because it has a high count. A claim about growth requires a valid comparison baseline.
+
+### Insight-to-Evidence Explorer
+
+Make every major insight clickable.
+
+When selected, reveal:
+- The insight
+- Supporting feedback records
+- The relevant time period
+- The number of supporting records
+- The calculation or reasoning behind the conclusion
+- Relevant uncertainty or limitations
+
+### Complaint Connection Map
+
+Where supported by the data, visualize relationships between related issues.
+
+Example hypothesis:
+
+Slow checkout → Failed payments → Abandoned orders → Negative reviews.
+
+Allow users to inspect connected issues and their underlying evidence.
+
+Present relationships as hypotheses unless the data establishes stronger evidence. If a graph visualization is impractical, build a connected-issue explorer instead.
+
+### What Changed? Timeline
+
+Allow users to compare different periods and explore:
+- Feedback volume
+- Negative-sentiment proportion
+- Complaint categories
+- Emerging or declining topics
+- Tracked issue resolution
+- Subsequent feedback trends
+
+Explain comparison periods and do not infer causation merely from a change in sentiment.
+
+## PAGE 7 — RECOMMENDATIONS
+
+Purpose: Help businesses decide what to fix first.
+
+Calculate issue priorities from transparent, configurable factors supported by the available data, such as:
+- Complaint frequency
+- Negative-sentiment proportion
+- Severity indicators
+- Recent complaint growth
+- Business impact indicators
+
+Do not assume that all these fields exist in the dataset.
+
+Show the scoring method and explain the contribution of each factor. Identify missing information and assumptions.
+
+For each recommendation, display:
+- Recommended action
+- Related issue
+- Why it matters
+- Supporting evidence
+- Suggested priority
+- Potential impact, where justified
+- Limitations
+- Action to create a tracked issue
+
+Recommendations must be specific and actionable.
+
+Example: Instead of “Improve customer experience,” recommend investigating the checkout error pattern, reviewing the affected transaction flow, and tracking subsequent complaints.
+
+Do not promise numerical business improvements without defensible evidence.
+
+## PAGE 8 — ISSUE TRACKER
+
+Purpose: Turn analysis into accountable work.
+
+Implement:
+- Create an issue from a recommendation or insight
+- Issue title and description
+- Priority
+- Category
+- Assigned owner where supported
+- Status: Open, In Progress, Resolved
+- Linked feedback evidence
+- Recommended action
+- Created and updated timestamps
+- Search and filters
+- Issue detail view
+- Status updates
+- Activity history
+- Summary of open and resolved issues
+
+All issue data must be stored in PostgreSQL.
+
+Changes must survive refreshes and new sessions. Enforce authorization for modifications.
+
+Provide a clear visual distinction between urgent, active, and resolved work.
+
+## PAGE 9 — REPORTS AND SETTINGS
+
+Implement a Reports area and a Settings area accessible through the application navigation.
+
+### Reports
+
+Users must be able to:
+- Choose a reporting period
+- Preview the report
+- Generate a report from actual stored analysis results
+- Export a PDF report
+- Export relevant records or data as CSV
+- Review key findings and recommendations
+- Review tracked issue status
+- Understand important limitations
+
+Reports should contain:
+- Reporting period
+- Feedback volume
+- Sentiment distribution
+- Main complaint categories
+- Highest-priority issues
+- Supporting evidence
+- Actionable recommendations
+- Relevant trends
+- Issue status summary
+
+Use a professional report layout suitable for sharing with business stakeholders.
+
+### Settings
+
+Include:
+- Profile details
+- Workspace details
+- Account preferences
+- Analysis history where appropriate
+- AI configuration status
+- Adaption integration status
+- Setup guidance for missing credentials
+- Relevant application configuration information
+
+Do not expose private API keys or secrets in the browser.
+
+---
+
+# 6. UNIQUE DIFFERENTIATORS
+
+Implement these features as part of the product, prioritizing reliable functionality.
+
+## A. Evidence-first intelligence
+
+Every major insight should link to real feedback records and show why the conclusion was reached.
+
+## B. Hidden Complaint Detector
+
+Group differently worded feedback that refers to similar underlying problems.
+
+Example:
+- “The app keeps freezing.”
+- “The page never loads.”
+- “I cannot finish my order.”
+
+Group them only when their semantic similarity or supported analysis justifies it. Display the evidence and grouping method.
+
+## C. Customer Impact Score
+
+Rank issues using transparent criteria and show how each criterion contributes to the score.
+
+Do not present a subjective score as an objective business fact.
+
+## D. Ask Your Feedback
+
+Create a conversational analytics interface that supports questions such as:
+- What are customers most unhappy about?
+- Which complaints increased recently?
+- Show negative feedback about pricing.
+- Why is this issue ranked first?
+- Which tracked issues remain unresolved?
+
+Ground answers in database queries and stored analysis results. Show evidence links where appropriate.
+
+Do not fabricate answers when information is unavailable.
+
+## E. Feedback-to-Fix workflow
+
+Users should be able to move from an insight to a recommendation and then to a tracked issue without manually recreating the same information.
+
+Persist links between the original feedback, analysis, recommendation, and tracked issue.
+
+---
+
+# 7. ADAPTION INTEGRATION — MANDATORY
+
+The official problem statement requires Adaption to contribute meaningfully to the AI or data-processing workflow.
+
+Do not treat Adaption as an optional decoration.
+
+Before implementation, read `Adaption Documents.pdf` and identify:
+- What Adaption actually does
+- Its documented integration method
+- Supported SDKs or APIs
+- Authentication requirements
+- Available capabilities
+- Input and output formats
+- Limitations and configuration requirements
+
+Then select a meaningful, supported role in the analysis workflow.
+
+Potential roles, depending on documented capabilities, include:
+- Coordinating feedback analysis
+- Processing or categorizing feedback
+- Orchestrating supported AI operations
+- Producing or validating recommendations
+- Connecting analysis steps into a repeatable workflow
+
+These are candidate roles, not assumed Adaption features. Implement only what the documentation supports.
+
+### Integration requirements
+
+- Implement the genuine documented integration.
+- Keep credentials on the backend.
+- Integrate it into an actual analysis or processing step.
+- Pass appropriate feedback or analysis data.
+- Process the actual response.
+- Persist useful results and execution metadata.
+- Show the integration's status and meaningful errors.
+- Handle missing credentials and failed requests.
+- Document configuration and setup.
+- Make the integration visible and easy to demonstrate.
+- Explain its contribution in the project's documentation.
+
+Do not invent endpoint URLs, SDK methods, or credentials.
+
+Do not claim successful integration when only a placeholder exists.
+
+If the required credentials are unavailable, implement the documented integration boundary and clearly identify the remaining setup. Any fallback must be explicitly labeled and must not masquerade as a successful Adaption execution.
+
+Include an **Adaption Integration Details** view showing:
+1. Where Adaption enters the processing pipeline.
+2. What information it receives.
+3. Which documented operation is performed.
+4. What response or result is produced.
+5. How the result affects subsequent analysis.
+6. Whether the latest execution succeeded or failed.
+
+The integration must be demonstrable to the judges.
+
+---
+
+# 8. BACKEND DATA PROCESSING
+
+Build a modular processing pipeline.
+
+Recommended sequence:
+
+CSV upload
+→ Validation
+→ Data normalization
+→ Database persistence
+→ Adaption-supported processing
+→ Sentiment analysis
+→ Topic extraction and categorization
+→ Related-feedback grouping
+→ Issue prioritization
+→ Recommendation generation
+→ Analytics and reports
+
+Adapt the sequence to the actual Adaption capabilities and the selected AI implementation.
+
+Requirements:
+- Preserve original feedback text.
+- Make processing repeatable.
+- Track processing status and errors.
+- Avoid unnecessary duplicate AI calls.
+- Associate analysis outputs with the relevant records and analysis run.
+- Handle missing or invalid feedback safely.
+- Calculate metrics consistently.
+- Record enough provenance to investigate results.
+- Support reanalysis when appropriate.
+
+If processing large datasets requires background jobs, use an appropriate lightweight job mechanism and expose progress through the API. Do not build a complex distributed system unnecessarily for a 48-hour hackathon.
+
+---
+
+# 9. DATABASE MODELS
+
+Inspect the CSV before finalizing the schema.
+
+Create appropriate models for:
+- Users
+- Workspaces, if required
+- Feedback
+- Dataset imports
+- Analysis runs
+- Sentiment results
+- Topics and issue groups
+- Evidence links
+- Recommendations
+- Tracked issues
+- Issue activity history
+- Report metadata
+
+Use proper primary keys, foreign keys, indexes, constraints, timestamps, and migrations.
+
+Prevent unauthorized access to another user's records.
+
+Avoid unnecessary duplication of raw feedback and derived analysis.
+
+Include a safe database initialization and demo-data seeding process.
+
+---
+
+# 10. API DESIGN
+
+Create organized REST endpoints for:
+
+- Authentication
+- User and workspace management
+- Feedback CRUD
+- CSV upload, preview, and import
+- Analysis execution and status
+- Dashboard metrics
+- Sentiment and trend analytics
+- Issue groups and evidence
+- Recommendations
+- Issue creation and updates
+- Report generation and downloads
+- Adaption integration status
+
+Use validation, consistent responses, correct HTTP status codes, pagination, centralized error handling, and authorization.
+
+The frontend must consume these APIs. Do not simulate successful API operations using local component state alone.
+
+---
+
+# 11. FUNCTIONALITY REQUIREMENTS
+
+Every visible interactive element must perform its intended action.
+
+Implement:
+- Working navigation
+- Search and filters
+- Sorting and pagination
+- File upload
+- Forms and validation
+- Modals and detail panels
+- Interactive charts
+- Evidence drill-downs
+- Issue status updates
+- Report downloads
+- Authentication
+- Processing progress
+- Success, loading, empty, and error states
+
+Ensure that dashboard numbers, issue counts, charts, and reports are consistent with the underlying data and active filters.
+
+Use deterministic sample data only for an explicitly identified demo mode. Clearly distinguish actual analysis from simulated output.
+
+No dead buttons. No fabricated integration status. No misleading progress indicators.
+
+---
+
+# 12. SECURITY AND RELIABILITY
+
+Implement:
+- Password hashing
+- Backend authentication and authorization
+- Secure session or token handling
+- Server-side secret management
+- CSV file validation
+- File size limits
+- Safe database access
+- Appropriate CORS configuration
+- Request validation
+- Error handling
+- Protection against unauthorized data access
+- Safe logging without exposing secrets
+- Environment-based configuration
+
+Do not commit API keys or production credentials.
+
+Create `.env.example` with placeholders.
+
+---
+
+# 13. TESTING AND DEPLOYMENT
+
+The final deliverable must be a deployable full-stack website.
+
+Provide:
+- Complete frontend and backend source code
+- Database models and migrations
+- Dependency files
+- `.env.example`
+- Installation instructions
+- Local development instructions
+- API documentation
+- Adaption configuration instructions
+- Sample-data setup
+- Core backend tests
+- Tests for the CSV import and analysis workflow
+- Tests for issue tracking and report generation
+- Deployment instructions
+
+Ensure frontend/backend URLs, database connections, production environment variables, CORS, and secret management are configured correctly.
+
+Test the primary user journey from registration to feedback import, analysis, insight investigation, recommendation, issue tracking, and report export.
+
+Do not claim deployment or tests succeeded unless they have actually been verified.
+
+---
+
+# 14. IMPLEMENTATION STRATEGY
+
+Work in the following order:
+
+1. Inspect all attachments and the existing repository.
+2. Produce a concise implementation plan.
+3. Establish the project structure and development environment.
+4. Build database models and migrations.
+5. Implement authentication and backend APIs.
+6. Implement CSV import and validation.
+7. Build the analysis pipeline and documented Adaption integration.
+8. Implement dashboard metrics and evidence-backed insights.
+9. Build the nine required application areas.
+10. Implement recommendations, issue tracking, and reports.
+11. Apply the custom design system and responsive interactions.
+12. Test the complete workflow.
+13. Fix errors and improve reliability.
+14. Prepare setup documentation and the hackathon demo.
+
+Do not stop after creating the plan, a frontend scaffold, or the landing page. Continue implementing the working product.
+
+If you encounter an error, investigate and fix it instead of silently bypassing it. If a requirement cannot be completed because an external credential or unsupported capability is missing, explain the exact blocker and finish the remaining work.
+
+Preserve functioning code in an existing repository and avoid unnecessary rewrites.
+
+---
+
+# 15. FINAL ACCEPTANCE CHECKLIST
+
+The application is ready only when:
+
+- [ ] All nine required application areas are implemented.
+- [ ] Registration, login, and protected backend access work.
+- [ ] The supplied CSV can be imported and validated.
+- [ ] Feedback is persisted in PostgreSQL.
+- [ ] Meaningful sentiment, topic, and complaint analysis is available.
+- [ ] Adaption contributes to a genuine, documented workflow.
+- [ ] Dashboard metrics and filters use actual data.
+- [ ] Insights connect to their supporting evidence.
+- [ ] Recommendations explain their priorities.
+- [ ] Users can create and update tracked issues.
+- [ ] Reports reflect actual analysis results.
+- [ ] PDF and CSV exports work.
+- [ ] Application state persists across page refreshes.
+- [ ] Loading, empty, success, and error states are handled.
+- [ ] Authentication and credentials are handled securely.
+- [ ] The interface is responsive, accessible, and visually distinctive.
+- [ ] The project can be installed, tested, and deployed using the documentation.
+- [ ] The Adaption integration can be explained and demonstrated.
+
+# FINAL INSTRUCTION
+
+Create a genuinely distinctive, premium, evidence-first intelligence platform.
+
+Use original composition, precise typography, asymmetric data layouts, restrained colors, sophisticated interactions, custom analytical visualizations, and meaningful information hierarchy.
+
+Do not generate a generic AI dashboard. Do not sacrifice functionality for appearance. Do not fabricate data or integrations.
+
+**Build a complete, working website in which every important insight has evidence, every recommendation has reasoning, every issue can be tracked, and Adaption performs a real documented role in the processing workflow.**
+
+The final result must be technically functional, visually memorable, and ready for a live hackathon demonstration.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-12T20:59:23+05:30.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Claude Sonnet 4.6 (Thinking). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
